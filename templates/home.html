@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% if message %}
+  <div class="alert alert-success" role="alert">
+    {{ message }}
+  </div>
+{% endif %}
+  <div class="container ">
+    <div class="col-md-8 mx-auto">
+        <h2 class="text-center">This is Home Page</h2>
+        <img src="{% static 'images/galina-n-miziNqvJx5M-unsplash.jpg' %}" height="500px" width="100%"  alt="picture">
+        <a class="btn btn-danger" href="{% url 'logout' %}">Logout</a>
+    </div>
+  </div>
+{% endblock content %}

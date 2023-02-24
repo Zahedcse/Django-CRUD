@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container my-5">
+        <h2 class="text-center">All Products</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr> 
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Image</th>
+                    <th>Stock</th>
+                    <th>Type</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                    <tr>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.description }}</td>
+                        <td>{{ product.price }}</td>
+                        <td><img src="{{ product.image.url }}" height="200px" width="200px" class="img-thumbnail" alt="{{ product.name }}"></td>
+                        <td>{{ product.stock }}</td>
+                        <td>{{ product.type }}</td>
+                        <td>
+                            <a class="btn btn-info btn-sm" href="">Edit</a>
+                            <a class="btn btn-danger btn-sm" href="">Delete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock content %}
+    
